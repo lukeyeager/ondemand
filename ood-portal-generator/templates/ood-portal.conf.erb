@@ -280,4 +280,10 @@ Listen <%= addr_port %>
     <%- end -%>
   </Directory>
   <%- end -%>
+
+  <%- if @virtualhost -%>
+  <%- @virtualhost.each do |line| -%>
+  <%= line %>
+  <%- end -%>
+  <%- end -%>
 </VirtualHost>
