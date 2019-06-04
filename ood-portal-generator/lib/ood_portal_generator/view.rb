@@ -67,6 +67,9 @@ module OodPortalGenerator
       # Register unmapped user sub-uri
       @register_uri  = opts.fetch(:register_uri, nil)
       @register_root = opts.fetch(:register_root, nil)
+
+      # Misc other lines in <VirtualHost>
+      @virtualhost = opts.fetch(:virtualhost, nil)
     end
 
     # Render the provided template as a string
