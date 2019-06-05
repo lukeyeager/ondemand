@@ -3,6 +3,12 @@ error_log   <%= error_log_path %>;
 pid         <%= pid_path %>;
 worker_processes 1;  ## Default: 1
 
+<%- if custom_modules -%>
+<%- custom_modules.each do |modulepath| -%>
+load_module <%= modulepath %>;
+<%- end -%>
+<%- end -%>
+
 <%- env_declarations.each do |varname| -%>
 env <%= varname %>;
 <%- end -%>
