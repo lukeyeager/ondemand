@@ -99,6 +99,12 @@ module NginxStage
       File.join NginxStage.root, "html"
     end
 
+    # Array of custom modules to load
+    # @return [Array<String>] the array of module paths
+    def custom_modules
+      NginxStage.pun_custom_modules
+    end
+
     # Array of env vars to declare in NGINX config using env directive
     # @return [Array<String>] list of env vars to declare in NGINX config
     def env_declarations

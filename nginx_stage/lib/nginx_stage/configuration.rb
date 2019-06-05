@@ -67,6 +67,10 @@ module NginxStage
     # per-user NGINX configuration options
     #
 
+    # Custom modules to load in the PUN
+    # @return [Array<String>] the array of module paths
+    attr_accessor :pun_custom_modules
+
     # Custom environment variables to set in the PUN
     # @return [Hash<String, String>] custom env var key and value pairs
     attr_writer :pun_custom_env
@@ -404,6 +408,7 @@ module NginxStage
       self.passenger_nodejs = "#{root}/bin/node"
       self.passenger_python = "#{root}/bin/python"
 
+      self.pun_custom_modules  = []
       self.pun_custom_env      = {}
       self.pun_custom_env_declarations = []
       self.pun_custom_html_root = '/etc/ood/config/pun/html'
